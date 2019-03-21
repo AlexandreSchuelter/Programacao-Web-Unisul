@@ -1,31 +1,19 @@
-package br.unisul.pweb.quarta.domain;
+package br.unisul.pweb.quarta.dtos;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
+import br.unisul.pweb.quarta.domain.Categoria;
 
-public class Categoria implements Serializable{
+public class CategoriaDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	private String nome;
 	
-	public Categoria() {
-		
-	}
-	
-	
-	public Categoria(Integer id, String nome) {
-		super();
-		this.id = id;
-		this.nome = nome;
+
+	public CategoriaDTO(Categoria c) {
+		id = c.getId();
+		nome = c.getNome();
 	}
 	
 	public Integer getId() {
@@ -40,7 +28,8 @@ public class Categoria implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -48,7 +37,8 @@ public class Categoria implements Serializable{
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
+	
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -57,7 +47,7 @@ public class Categoria implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Categoria other = (Categoria) obj;
+		CategoriaDTO other = (CategoriaDTO) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -65,9 +55,6 @@ public class Categoria implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
-	
 	
 	
 }
