@@ -2,18 +2,20 @@ package br.unisul.pweb.quarta.dtos;
 
 import java.io.Serializable;
 
-import br.unisul.pweb.quarta.domain.Categoria;
+import br.unisul.pweb.quarta.domain.Estado;
 
-public class CategoriaDTO implements Serializable{
+public class EstadoDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String nome;
+	private String uf;
 	
 
-	public CategoriaDTO(Categoria c) {
+	public EstadoDTO(Estado c) {
 		id = c.getId();
 		nome = c.getNome();
+		uf = c.getUf();
 	}
 	
 	public Integer getId() {
@@ -28,8 +30,13 @@ public class CategoriaDTO implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
+	public String getUf() {
+		return uf;
+	}
+	public void setUf(String uf) {
+		this.uf = uf;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -47,7 +54,7 @@ public class CategoriaDTO implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CategoriaDTO other = (CategoriaDTO) obj;
+		EstadoDTO other = (EstadoDTO) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
