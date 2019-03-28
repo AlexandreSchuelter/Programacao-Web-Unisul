@@ -1,21 +1,33 @@
 package br.unisul.pweb.quarta.dtos;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-import br.unisul.pweb.quarta.domain.Estado;
+@Entity
 
-public class EstadoDTO implements Serializable{
+public class Estado implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	private String nome;
 	private String uf;
 	
-
-	public EstadoDTO(Estado c) {
-		id = c.getId();
-		nome = c.getNome();
-		uf = c.getUf();
+	public Estado() {
+		
+	}
+	
+	
+	public Estado(Integer id, String nome, String uf) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.uf = uf;
 	}
 	
 	public Integer getId() {
@@ -44,8 +56,7 @@ public class EstadoDTO implements Serializable{
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-	
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -54,7 +65,7 @@ public class EstadoDTO implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		EstadoDTO other = (EstadoDTO) obj;
+		Estado other = (Estado) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -62,6 +73,9 @@ public class EstadoDTO implements Serializable{
 			return false;
 		return true;
 	}
+	
+	
+	
 	
 	
 }
