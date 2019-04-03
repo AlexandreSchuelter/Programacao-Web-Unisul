@@ -6,6 +6,7 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import br.unisul.pweb.quarta.domain.Categoria;
 import br.unisul.pweb.quarta.domain.Cidade;
 import br.unisul.pweb.quarta.domain.Cliente;
@@ -19,11 +20,16 @@ import br.unisul.pweb.quarta.repositories.ClienteRepository;
 import br.unisul.pweb.quarta.repositories.EnderecoRepository;
 import br.unisul.pweb.quarta.repositories.EstadoRepository;
 import br.unisul.pweb.quarta.repositories.ProdutoRepository;
+=======
+import br.unisul.pweb.quarta.domain.Estado;
+import br.unisul.pweb.quarta.repositories.EstadoRepository;
+>>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
 
 @Service
 public class DbService {
 	
 	@Autowired
+<<<<<<< HEAD
 	private CategoriaRepository catRep;
 	
 	@Autowired
@@ -50,6 +56,20 @@ public class DbService {
 		Categoria cat5 = new Categoria(null, "Jardinagem");
 		Categoria cat6 = new Categoria(null, "Decoração");
 		Categoria cat7 = new Categoria(null, "Perfumaria");
+=======
+	private EstadoRepository estadoRepository;
+	
+	public void inicializaBancoDeDados() throws ParseException {
+		
+		Estado cat1 = new Estado(null, "Santa Catarina","SC");
+		Estado cat2 = new Estado(null, "Parana","PR");
+		Estado cat3 = new Estado(null, "Sao Paulo","SP");
+		Estado cat4 = new Estado(null, "Rio Grande do Sul","RS");
+		Estado cat5 = new Estado(null, "Minas Gerais","MG");
+		Estado cat6 = new Estado(null, "Mato Grosso do Sul","MS");
+		Estado cat7 = new Estado(null, "Bahia","BA");
+		estadoRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7));
+>>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
 		
 		Estado e1 = new Estado(null, "Paraná","PR");
 		Estado e2 = new Estado(null, "Santa Catarina","SC");

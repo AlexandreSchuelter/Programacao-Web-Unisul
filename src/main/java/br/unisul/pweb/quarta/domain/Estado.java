@@ -8,9 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+<<<<<<< HEAD
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+=======
+import javax.persistence.ManyToMany;
+>>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
 
 @Entity
 
@@ -24,11 +28,22 @@ public class Estado implements Serializable{
 	private String nome;
 	private String uf;
 	
+<<<<<<< HEAD
 	@JsonIgnore
 	@OneToMany(mappedBy="estado")
 	private List<Cidade> cidades = new ArrayList<>();
 	
 	public Estado() {
+=======
+<<<<<<<< HEAD:src/main/java/br/unisul/pweb/quarta/domain/Estado.java
+	public Estado() {
+========
+	@ManyToMany(mappedBy="categorias")
+	private List<Produto> produtos = new ArrayList();
+	
+	public Categoria() {
+>>>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6:src/main/java/br/unisul/pweb/quarta/domain/Categoria.java
+>>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
 		
 	}
 	
@@ -40,6 +55,21 @@ public class Estado implements Serializable{
 		this.uf = uf;
 	}
 	
+<<<<<<< HEAD
+=======
+	
+	
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
+
+>>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
 	public Integer getId() {
 		return id;
 	}
@@ -58,6 +88,7 @@ public class Estado implements Serializable{
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
+<<<<<<< HEAD
 	public List<Cidade> getCidades() {
 		return cidades;
 	}
@@ -66,6 +97,10 @@ public class Estado implements Serializable{
 	}
 
 
+=======
+
+	
+>>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -90,6 +125,11 @@ public class Estado implements Serializable{
 			return false;
 		return true;
 	}
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
 	
 	
 	
