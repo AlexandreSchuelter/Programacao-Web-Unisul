@@ -6,7 +6,6 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
 import br.unisul.pweb.quarta.domain.Categoria;
 import br.unisul.pweb.quarta.domain.Cidade;
 import br.unisul.pweb.quarta.domain.Cliente;
@@ -20,16 +19,14 @@ import br.unisul.pweb.quarta.repositories.ClienteRepository;
 import br.unisul.pweb.quarta.repositories.EnderecoRepository;
 import br.unisul.pweb.quarta.repositories.EstadoRepository;
 import br.unisul.pweb.quarta.repositories.ProdutoRepository;
-=======
 import br.unisul.pweb.quarta.domain.Estado;
 import br.unisul.pweb.quarta.repositories.EstadoRepository;
->>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
+
 
 @Service
 public class DbService {
 	
 	@Autowired
-<<<<<<< HEAD
 	private CategoriaRepository catRep;
 	
 	@Autowired
@@ -69,7 +66,6 @@ public class DbService {
 		Estado cat6 = new Estado(null, "Mato Grosso do Sul","MS");
 		Estado cat7 = new Estado(null, "Bahia","BA");
 		estadoRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7));
->>>>>>> abbd5a6425a7837780ced15a560b7e48fee110a6
 		
 		Estado e1 = new Estado(null, "Paraná","PR");
 		Estado e2 = new Estado(null, "Santa Catarina","SC");
